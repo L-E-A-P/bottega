@@ -1,0 +1,55 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[]{standalone}
+    
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+% Font OCR-A a comando
+\newfont{\ocrfontsmall}{ocr10 at 8pt}
+\newfont{\ocrfontnormal}{ocr10}
+\newfont{\ocrfontlarge}{ocr10 at 14pt}
+\newfont{\ocrfonthuge}{ocr10 at 18pt}
+
+% Comando semplice per usare OCR-A
+\newcommand{\ocr}[1]{{\ocrfontnormal #1}}
+\newcommand{\ocrsmall}[1]{{\ocrfontsmall #1}}
+\newcommand{\ocrlarge}[1]{{\ocrfontlarge #1}}
+\newcommand{\ocrhuge}[1]{{\ocrfonthuge #1}}
+
+% Comando per il codice identificativo verticale
+\newcommand{\codiceverticale}[1]{%
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[rotate=90] at ($(0,0) + (3cm, 0cm)$) {%
+            {\font\tempocr=ocr10 at 81pt \tempocr #1}%
+        };
+    \end{tikzpicture}%
+}
+
+\begin{document}
+  \begin{tikzpicture}
+    \draw[magenta, thin] (0,0) -- (-24,0);
+    \draw[magenta, thin] (-24,33) -- (0,33) -- (0,0); % copertina
+    \draw[magenta, thin] (-24,0) -- (-48,0) -- (-48,33) -- (-24,33); % fondo
+    \draw[magenta, thin] (-48,0) -- (-55,2) -- (-55, 31) -- (-48,33); % lembo lungo
+    \draw[magenta, thin] (-27,33) -- (-29,40) -- (-46, 40) -- (-48,33); % lembo sopra
+    \draw[magenta, thin] (-27,0) -- (-29,-7) -- (-46, -7) -- (-48,0); % lembo sotto
+    \node[rotate=90, anchor=center, magenta] at (-24,16.5) {\font\tempocr=ocr10 at 123pt \tempocr MB-1990-02};
+    \node[rotate=90, anchor=center, scale=0.123] (logo) at (-51.5,16.5) {\includegraphics[]{2025-07-23-logo-kern-magenta.pdf}};
+%    \draw[magenta, thin] (-24,20) -- (0,20);
+    \node[anchor=center, magenta] at (-12,20) {\font\tempocr=ocr10 at 51pt \tempocr VIOLINO II};
+%    \draw[magenta, thin] (-24,18) -- (0,18);
+    \node[anchor=center, magenta] at (-12,18) {\font\tempocr=ocr10 at 33pt \tempocr LIRA DI EOLO};
+%    \draw[magenta, thin] (-24,17) -- (0,17);
+    \node[anchor=center, magenta] at (-12,17) {\font\tempocr=ocr10 at 33pt \tempocr MARIO BERTONCINI};
+%    \draw[magenta, thin] (-24,16) -- (0,16);
+    \node[anchor=center, magenta] at (-12,16) {\font\tempocr=ocr10 at 33pt \tempocr CETONA, ITALIA};
+%    \draw[magenta, thin] (-24,15) -- (0,15);
+    \node[anchor=center, magenta] at (-12,15) {\font\tempocr=ocr10 at 33pt \tempocr 1990};      
+  \end{tikzpicture}
+\end{document}

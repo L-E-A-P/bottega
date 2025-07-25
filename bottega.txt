@@ -1,28 +1,36 @@
 .
 ├── LICENSE
+├── Makefile
 ├── README.md
 ├── bottega.txt
-└── interventi
-    └── mb
-        ├── mb-1980-01
-        │   ├── LEAP170725BR0001.aux
-        │   ├── LEAP170725BR0001.log
-        │   ├── LEAP170725BR0001.out
-        │   ├── LEAP170725BR0001.pdf
-        │   └── LEAP170725BR0001.tex
-        ├── mb-1990-01
-        │   ├── LEAP190725BR0002.aux
-        │   ├── LEAP190725BR0002.log
-        │   ├── LEAP190725BR0002.out
-        │   ├── LEAP190725BR0002.pdf
-        │   └── LEAP190725BR0002.tex
-        ├── mb-1990-02
-        │   ├── LEAP190725BR0003.aux
-        │   ├── LEAP190725BR0003.log
-        │   ├── LEAP190725BR0003.out
-        │   ├── LEAP190725BR0003.pdf
-        │   └── LEAP190725BR0003.tex
-        ├── mb-1990-03
-        └── mb-1990-04
+├── interventi
+│   └── mb
+│       ├── mb-1980-01
+│       │   ├── LEAP170725BR0001.pdf
+│       │   ├── LEAP170725BR0001.tex
+│       │   ├── Makefile
+│       │   └── leap-report.sty
+│       ├── mb-1990-01
+│       │   ├── LEAP190725BR0002.pdf
+│       │   ├── LEAP190725BR0002.tex
+│       │   ├── Makefile
+│       │   └── leap-report.sty
+│       ├── mb-1990-02
+│       │   ├── LEAP190725BR0003.aux
+│       │   ├── LEAP190725BR0003.log
+│       │   ├── LEAP190725BR0003.out
+│       │   ├── LEAP190725BR0003.tex
+│       │   ├── Makefile
+│       │   └── leap-report.sty
+│       ├── mb-1990-03
+│       │   └── Makefile
+│       └── mb-1990-04
+│           └── Makefile
+├── leap-report.sty
+├── setup.sh
+└── templates
+    ├── Makefile.instrument
+    ├── Makefile.root
+    └── template-report.tex
 
-8 directories, 18 files
+9 directories, 25 files
