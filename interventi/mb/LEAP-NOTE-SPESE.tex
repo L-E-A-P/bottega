@@ -1,0 +1,93 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{AlegreyaSans}
+
+% Attiva AlegreyaSans come font di default
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage[left=3cm, right=2cm, top=0.7cm, bottom=0.7cm]{geometry}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{qrcode}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+\usepackage{atbegshi}
+
+% Colori per il report
+\definecolor{headcolor}{RGB}{40,40,40}
+\definecolor{fieldcolor}{RGB}{245,245,245}
+\definecolor{lightgray}{RGB}{220,220,220}
+
+% Font OCR-A a comando
+\newfont{\ocrfontsmall}{ocr10 at 8pt}
+\newfont{\ocrfontnormal}{ocr10}
+\newfont{\ocrfontlarge}{ocr10 at 14pt}
+\newfont{\ocrfonthuge}{ocr10 at 18pt}
+
+% Comando semplice per usare OCR-A
+\newcommand{\ocr}[1]{{\ocrfontnormal #1}}
+\newcommand{\ocrsmall}[1]{{\ocrfontsmall #1}}
+\newcommand{\ocrlarge}[1]{{\ocrfontlarge #1}}
+\newcommand{\ocrhuge}[1]{{\ocrfonthuge #1}}
+
+% Comando per il codice identificativo verticale
+\newcommand{\codiceverticale}[1]{%
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[rotate=90, anchor=south] at ($(current page.west) + (3cm, 0cm)$) {%
+            {\font\tempocr=ocr10 at 81pt \tempocr #1}%
+        };
+    \end{tikzpicture}%
+}
+
+% Impostazioni di pagina per lasciare spazio al codice
+\addtolength{\oddsidemargin}{1cm}
+
+% Griglia di sfondo per tutte le pagine
+\AtBeginShipout{%
+    \AtBeginShipoutUpperLeft{%
+        \begin{tikzpicture}[remember picture, overlay]
+            \draw[lightgray, thin, step=0.5cm] 
+                (current page.south west) grid (current page.north east);
+        \end{tikzpicture}%
+    }%
+}
+
+\begin{document}
+\thispagestyle{empty}
+
+%% Griglia a pagina intera come sfondo
+%\begin{tikzpicture}[remember picture, overlay]
+%    \draw[lightgray, very thin, step=0.5cm] 
+%        (current page.south west) grid (current page.north east);
+%\end{tikzpicture}
+
+% Codice identificativo del documento (formato: LEAP + GGMMAA + RE + numero incrementale)
+\codiceverticale{LEAP-MB-25-SPESE}
+
+% Intestazione del report
+{\Huge\bfseries\noindent NOTE DI BOTTEGA}\\[0.5em]
+{\large LEAP - LABORATORIO ELETTROACUSTICO PERMANENTE, ROMA}\\
+DATA INIZIO: 17/07/2025 \hspace{1cm} DATA FINE:\\
+\\
+
+
+
+% % Codice univoco del restauro
+% \begin{center}
+% \fcolorbox{black}{fieldcolor}{\Large\textbf{Codice Restauro: \ocr{LEAP190725RE0001}}}
+% \end{center}
+% \vspace{1em}
+\clearpage
+\null
+
+
+\end{document}

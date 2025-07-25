@@ -20,6 +20,7 @@
 \usepackage{qrcode}
 \usepackage[hidelinks]{hyperref}
 \usepackage{url}
+\usepackage{atbegshi}
 
 % Colori per il report
 \definecolor{headcolor}{RGB}{40,40,40}
@@ -47,90 +48,48 @@
     \end{tikzpicture}%
 }
 
-% % Comando per placeholder immagini
-% \newcommand{\placeholderimg}[2]{%
-%     \fcolorbox{black}{lightgray}{%
-%         \begin{minipage}[c][6cm][c]{0.45\textwidth}
-%             \centering
-%             \large\textbf{[FOTO]}\\
-%             \normalsize #1\\[1em]
-%             \small #2
-%         \end{minipage}
-%     }
-% }
-\newcommand{\campo}[2]{%
-    \noindent\textbf{#1:} #2\\[0.3em]
-}
-
-\newcommand{\campotabella}[2]{%
-    \rowcolor{fieldcolor}\textbf{#1} & #2 \\
-}
-
 % Impostazioni di pagina per lasciare spazio al codice
 \addtolength{\oddsidemargin}{1cm}
 
+% Griglia di sfondo per tutte le pagine
+\AtBeginShipout{%
+    \AtBeginShipoutUpperLeft{%
+        \begin{tikzpicture}[remember picture, overlay]
+            \draw[lightgray, thin, step=0.5cm] 
+                (current page.south west) grid (current page.north east);
+        \end{tikzpicture}%
+    }%
+}
+
 \begin{document}
 \thispagestyle{empty}
-%\color{magenta}
+
+%% Griglia a pagina intera come sfondo
+%\begin{tikzpicture}[remember picture, overlay]
+%    \draw[lightgray, very thin, step=0.5cm] 
+%        (current page.south west) grid (current page.north east);
+%\end{tikzpicture}
 
 % Codice identificativo del documento (formato: LEAP + GGMMAA + RE + numero incrementale)
 \codiceverticale{LEAP170725BR0001}
 
 % Intestazione del report
-{\Huge\bfseries\noindent INTERVENTI DI BOTTEGA}\\[0.5em]
+{\Huge\bfseries\noindent NOTE DI BOTTEGA}\\[0.5em]
 {\large LEAP - LABORATORIO ELETTROACUSTICO PERMANENTE, ROMA}\\
-19 Luglio 2025
+DATA: 17/07/2025 \hspace{1cm} ORARIO INIZIO: \hspace{2.5cm} ORARIO FINE:\\
+\\
+\noindent\ocrlarge{MB-1980-01}\\
+GRANDE SPIRALE - Gong Eolico\\
+
+
 
 % % Codice univoco del restauro
 % \begin{center}
 % \fcolorbox{black}{fieldcolor}{\Large\textbf{Codice Restauro: \ocr{LEAP190725RE0001}}}
 % \end{center}
 % \vspace{1em}
+\clearpage
+\null
 
-% Sezione 1: Identificazione dello strumento
-\section*{IDENTIFICAZIONE}
-
-\begin{tabularx}{\textwidth}{lX}
-Nome Strumento & Grande Spirale\\
-Tipologia & Gong Eolico \\
-Autore & Mario Bertoncini \\
-Anno di Costruzione & 1980 \\
-Luogo di Costruzione & Cetona, Italia \\
-Proprietario & Valeska Bertoncini | Erede e Curatrice del Fondo Mario Bertoncini\\
-Deposito & Fondazione Isabella Scelsi \\
-Numero di Inventario & \ocr{MB-1980-01} \\
-Valore Stimato & € 2000 (in stato dormiente) \\
-\end{tabularx}
-
-% Sezione 4: Interventi eseguiti
-\section*{INTERVENTI}
-
-\begin{tabularx}{\textwidth}{lX}
-  Pulizia delle superfici: & Pulizia della spirale metallica; pulizia del corpo in legno; pulizia del filo in nylon. \\
-  Lubrificazione: & Ingrassaggio perno rotante.\\
-\end{tabularx}
-
-% Sezione 4: Interventi eseguiti
-\subsection*{MATERIALI}
-
-\begin{tabularx}{\textwidth}{X}
-  WD-40 \\
-  Sidol \\
-  Alcol \\
-  Aceto di Alcol \\
-  Grasso Nautico \\
-\end{tabularx}
-
-% Sezione 4: Interventi eseguiti
-\subsection*{DURATA}
-
-2 ore
-
-\vfill\null
-
-\begin{flushright}
-  \href{https://www.leaphz.net/aleph/index.php/s/QAHAqtapPgd9d2N}{
-    \qrcode[height=7cm]{https://www.leaphz.net/aleph/index.php/s/QAHAqtapPgd9d2N}}
-\end{flushright}
 
 \end{document}
