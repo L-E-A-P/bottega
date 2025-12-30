@@ -1,0 +1,228 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{AlegreyaSans}
+
+% Attiva AlegreyaSans come font di default
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage[left=3cm, right=2cm, top=0.7cm, bottom=0.7cm]{geometry}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{qrcode}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+
+% Colori per il report
+\definecolor{headcolor}{RGB}{40,40,40}
+\definecolor{fieldcolor}{RGB}{245,245,245}
+\definecolor{lightgray}{RGB}{220,220,220}
+
+% Font OCR-A a comando
+\newfont{\ocrfontsmall}{ocr10 at 8pt}
+\newfont{\ocrfontnormal}{ocr10}
+\newfont{\ocrfontlarge}{ocr10 at 14pt}
+\newfont{\ocrfonthuge}{ocr10 at 18pt}
+
+% Comando semplice per usare OCR-A
+\newcommand{\ocr}[1]{{\ocrfontnormal #1}}
+\newcommand{\ocrsmall}[1]{{\ocrfontsmall #1}}
+\newcommand{\ocrlarge}[1]{{\ocrfontlarge #1}}
+\newcommand{\ocrhuge}[1]{{\ocrfonthuge #1}}
+
+% Comando per il codice identificativo verticale
+\newcommand{\codiceverticale}[1]{%
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[rotate=90, anchor=south] at ($(current page.west) + (3cm, 0cm)$) {%
+            {\font\tempocr=ocr10 at 81pt \tempocr #1}%
+        };
+    \end{tikzpicture}%
+}
+
+% % Comando per placeholder immagini
+% \newcommand{\placeholderimg}[2]{%
+%     \fcolorbox{black}{lightgray}{%
+%         \begin{minipage}[c][6cm][c]{0.45\textwidth}
+%             \centering
+%             \large\textbf{[FOTO]}\\
+%             \normalsize #1\\[1em]
+%             \small #2
+%         \end{minipage}
+%     }
+% }
+\newcommand{\campo}[2]{%
+    \noindent\textbf{#1:} #2\\[0.3em]
+}
+
+\newcommand{\campotabella}[2]{%
+    \rowcolor{fieldcolor}\textbf{#1} & #2 \\
+}
+
+% Impostazioni di pagina per lasciare spazio al codice
+\addtolength{\oddsidemargin}{1cm}
+
+\begin{document}
+\thispagestyle{empty}
+%\color{magenta}
+
+% Codice identificativo del documento (formato: LEAP + GGMMAA + RE + numero incrementale)
+\codiceverticale{LEAP080925BR0009}
+
+% Intestazione del report
+{\Huge\bfseries\noindent INTERVENTI DI BOTTEGA}\\[0.5em]
+{\large LEAP - LABORATORIO ELETTROACUSTICO PERMANENTE, ROMA}\\
+08 Settembre 2025
+
+% % Codice univoco del restauro
+% \begin{center}
+% \fcolorbox{black}{fieldcolor}{\Large\textbf{Codice Restauro: \ocr{LEAP190725RE0001}}}
+% \end{center}
+% \vspace{1em}
+
+% Sezione 1: Identificazione dello strumento
+\section*{IDENTIFICAZIONE}
+
+\begin{tabularx}{\textwidth}{lX}
+Nome Strumento & Kathedrale\\
+Tipologia & Gong Eolico \\
+Autore & Mario Bertoncini \\
+Anno di Costruzione & 1980 \\
+Luogo di Costruzione & Berlino, Germania \\
+Proprietario & Valeska Bertoncini | Erede e Curatrice del Fondo Mario Bertoncini\\
+Deposito & Fondazione Isabella Scelsi \\
+Numero di Inventario & \ocr{MB-1980-02} \\
+Valore Stimato & € 2000 (in stato dormiente) \\
+\end{tabularx}
+
+% Sezione 4: Interventi eseguiti
+\section*{INTERVENTI}
+
+\begin{tabularx}{\textwidth}{lX}
+  Sostituzioni: & Barre mancanti n. 1 e 35\\
+  Pulizia delle superfici: & Pulizia barre smontate una alla volta per rimozione ruggine. \\
+\end{tabularx}
+
+% Sezione 4: Interventi eseguiti
+\subsection*{MATERIALI}
+
+\begin{tabularx}{\textwidth}{X}
+  Barre in acciaio da Fondo Bertoncini\\
+  WD-40 \\
+  Aceto di Alcol \\
+\end{tabularx}
+
+% Sezione 4: Interventi eseguiti
+\subsection*{DURATA}
+
+20 ore
+
+\vfill\null
+
+\begin{flushright}
+  \href{https://github.com/L-E-A-P/bottega/}{
+    \qrcode[height=7cm]{https://github.com/L-E-A-P/bottega/}}
+\end{flushright}
+
+\clearpage
+
+\section*{Catalogo delle barre}
+
+Misurazioni ottenute a barre smontate complete di nottolino d'ottone. Le misure delle barre mancanti n. 1 e n. 35 sono state ottenute per continuità della progressione la prima, e interpolazione delle adiacenti per la seconda. La numerazione delle barre è ottenuta partendo dal bullone di ancoraggio al piedistallo.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{|r|r|r|l||r|r|r|l|}
+\hline
+\textbf{Barra} & \textbf{L (cm)} & \textbf{Ø (mm)} & \textbf{Note} &
+\textbf{Barra} & \textbf{L (cm)} & \textbf{Ø (mm)} & \textbf{Note} \\
+\hline
+\textbf{1} & \textbf{25,0} & \textbf{3,3} & \textit{stimata} & 27 & 91,0 & 3,6 & \\
+2 & 26,1 & 3,3 & & 28 & 82,5 & 3,6 & \\
+3 & 27,3 & 3,7 & & 29 & 75,5 & 3,6 & \\
+4 & 28,4 & 3,5 & & 30 & 72,4 & 3,6 & \\
+5 & 29,4 & 3,3 & & 31 & 56,9 & 3,6 & \\
+6 & 30,3 & 3,3 & & 32 & 48,3 & 3,6 & \\
+7 & 31,1 & 3,3 & & 33 & 55,3 & 3,6 & \\
+8 & 33,1 & 3,3 & & 34 & 63,6 & 3,6 & \\
+9 & 34,5 & 3,5 & & \textbf{35} & \textbf{69,5} & \textbf{3,6} & \textit{stimata} \\
+10 & 36,6 & 3,3 & & 36 & 75,3 & 3,6 & \\
+11 & 42,5 & 3,4 & & 37 & 90,7 & 3,6 & \\
+12 & 46,9 & 3,4 & & 38 & 94,4 & 3,6 & \\
+13 & 57,1 & 3,5 & & 39 & 84,2 & 3,6 & \\
+14 & 50,8 & 3,4 & & 40 & 78,1 & 2,8 & \\
+15 & 44,7 & 3,3 & & 41 & 73,6 & 2,8 & \\
+16 & 40,1 & 3,2 & & 42 & 70,6 & 2,8 & \\
+17 & 34,9 & 3,4 & & 43 & 68,5 & 2,8 & \\
+18 & 30,0 & 3,3 & & 44 & 64,1 & 2,8 & \\
+19 & 26,6 & 3,4 & & 45 & 61,5 & 2,8 & \\
+20 & 33,9 & 3,5 & & 46 & 53,7 & 2,8 & \\
+21 & 38,1 & 3,7 & & 47 & 50,4 & 2,8 & \\
+22 & 41,9 & 3,7 & & 48 & 46,2 & 2,8 & \\
+23 & 47,3 & 3,6 & & 49 & 41,2 & 2,8 & \\
+24 & 62,8 & 3,7 & & 50 & 38,3 & 2,8 & \\
+25 & 73,0 & 3,6 & & 51 & 32,9 & 2,8 & \\
+26 & 98,6 & 3,6 & & 52 & 26,8 & 2,8 & \\
+\hline
+\end{tabular}
+\label{tab:kathedrale}
+\end{table}
+
+\null\vfill
+
+\begin{figure}[hb]
+\centering
+\begin{tikzpicture}[xscale=0.12, yscale=0.051]
+% Definizione colori
+\definecolor{originale}{RGB}{70,130,180}
+\definecolor{stimata}{RGB}{220,20,60}
+
+% Dati barre (numero, lunghezza, tipo: 0=originale, 1=stimata)
+\foreach \i/\h/\t in {
+1/25.0/1, 2/26.1/0, 3/27.3/0, 4/28.4/0, 5/29.4/0, 6/30.3/0, 7/31.1/0, 
+8/33.1/0, 9/34.5/0, 10/36.6/0, 11/42.5/0, 12/46.9/0, 13/57.1/0, 14/50.8/0,
+15/44.7/0, 16/40.1/0, 17/34.9/0, 18/30.0/0, 19/26.6/0, 20/33.9/0, 21/38.1/0,
+22/41.9/0, 23/47.3/0, 24/62.8/0, 25/73.0/0, 26/98.6/0, 27/91.0/0, 28/82.5/0,
+29/75.5/0, 30/72.4/0, 31/56.9/0, 32/48.3/0, 33/55.3/0, 34/63.6/0, 35/69.5/1,
+36/75.3/0, 37/90.7/0, 38/94.4/0, 39/84.2/0, 40/78.1/0, 41/73.6/0, 42/70.6/0,
+43/68.5/0, 44/64.1/0, 45/61.5/0, 46/53.7/0, 47/50.4/0, 48/46.2/0, 49/41.2/0,
+50/38.3/0, 51/32.9/0, 52/26.8/0
+} {
+  \pgfmathsetmacro{\x}{(\i-1)*2}
+  \ifnum\t=1
+    \fill[stimata] (\x,0) rectangle ++(1.6,\h);
+  \else
+    \fill[originale] (\x,0) rectangle ++(1.6,\h);
+  \fi
+}
+
+% Assi
+\draw[->] (0,0) -- (105,0) node[right] {\footnotesize barra};
+\draw[->] (0,0) -- (0,105) node[above] {\footnotesize L (cm)};
+
+% Griglia orizzontale
+\foreach \y in {25,50,75,100}
+  \draw[gray!30] (0,\y) -- (110,\y) node[left,black] {\tiny\y};
+
+% Etichette asse x (ogni 10 barre)
+\foreach \x in {1,10,20,30,40,50}
+  \draw (\x*2-2,0) -- (\x*2-2,-1) node[below] {\tiny\x};
+
+% Legenda
+%\fill[originale] (70,95) rectangle ++(3,3);
+%\node[right] at (73.5,96.5) {\footnotesize originali};
+%\fill[stimata] (70,88) rectangle ++(3,3);
+%\node[right] at (73.5,89.5) {\footnotesize stimate};
+
+\end{tikzpicture}
+\label{fig:kathedrale_profile}
+\end{figure}
+\end{document}
