@@ -10,9 +10,8 @@
 \usepackage{xcolor}
 \usepackage{colortbl}
 \usepackage{longtable}
-\usepackage{pdflscape}
 
-\geometry{margin=2.5cm}
+\geometry{landscape, margin=2.5cm}
 
 \renewcommand{\familydefault}{\sfdefault}
 
@@ -33,10 +32,9 @@
 \begin{document}
 
 \maketitle
+\thispagestyle{empty}
 
-\begin{landscape}
-
-\vspace{1cm}
+\newpage
 
 \begin{center}
 \begin{longtable}{
@@ -117,13 +115,13 @@
   &
   \\[4pt]
 
+\midrule[0.2pt]
+
   8 &
   \ocr{LEAP260725BR0008} &
   26 Luglio 2025 &
   arpa circolare&
   \texttt{mb-1980-03-arpa-circolare} \\[4pt]
-
-\midrule[0.2pt]
 
   9 &
   \ocr{LEAP080925BR0009} &
@@ -139,7 +137,5 @@
 
 \end{longtable}
 \end{center}
-
-\end{landscape}
 
 \end{document}
