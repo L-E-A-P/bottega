@@ -47,6 +47,17 @@
     \end{tikzpicture}%
 }
 
+% % Comando per placeholder immagini
+% \newcommand{\placeholderimg}[2]{%
+%     \fcolorbox{black}{lightgray}{%
+%         \begin{minipage}[c][6cm][c]{0.45\textwidth}
+%             \centering
+%             \large\textbf{[FOTO]}\\
+%             \normalsize #1\\[1em]
+%             \small #2
+%         \end{minipage}
+%     }
+% }
 \newcommand{\campo}[2]{%
     \noindent\textbf{#1:} #2\\[0.3em]
 }
@@ -60,14 +71,15 @@
 
 \begin{document}
 \thispagestyle{empty}
+%\color{magenta}
 
 % Codice identificativo del documento (formato: LEAP + GGMMAA + RE + numero incrementale)
-\codiceverticale{LEAP190725BR0003}
+\codiceverticale{LEAP281025BR0010}
 
 % Intestazione del report
 {\Huge\bfseries\noindent INTERVENTI DI BOTTEGA}\\[0.5em]
 {\large LEAP - LABORATORIO ELETTROACUSTICO PERMANENTE, ROMA}\\
-19 Luglio 2025
+28 Ottobre 2025
 
 % % Codice univoco del restauro
 % \begin{center}
@@ -79,14 +91,14 @@
 \section*{IDENTIFICAZIONE}
 
 \begin{tabularx}{\textwidth}{lX}
-Nome Strumento & Violino II\\
-Tipologia & Lira di Eolo \\
+Nome Strumento & Kathedrale\\
+Tipologia & Gong Eolico \\
 Autore & Mario Bertoncini \\
-Anno di Costruzione & 1990 \\
+Anno di Costruzione & 1980 \\
 Luogo di Costruzione & Berlino, Germania \\
 Proprietario & Valeska Bertoncini | Erede e Curatrice del Fondo Mario Bertoncini\\
 Deposito & Fondazione Isabella Scelsi \\
-Numero di Inventario & \ocr{MB-1990-02} \\
+Numero di Inventario & \ocr{MB-1980-02} \\
 Valore Stimato & € 2000 (in stato dormiente) \\
 \end{tabularx}
 
@@ -94,27 +106,22 @@ Valore Stimato & € 2000 (in stato dormiente) \\
 \section*{INTERVENTI}
 
 \begin{tabularx}{\textwidth}{lX}
-  Regolazione meccanica: & Serraggio e orientamento barre metalliche. \\
-  Pulizia delle superfici: & Pulizia delle barre metalliche e dei canali di serraggio; pulizia del corpo in legno. \\
-  Sostituzione componenti: & %Feltri antiscivolo alla base; bulloneria.\\
+  Costruzione: custodia-alloggio in legno su misura\\
 \end{tabularx}
 
 % Sezione 4: Interventi eseguiti
 \subsection*{MATERIALI}
 
 \begin{tabularx}{\textwidth}{X}
-  CRC 5-56 \\
-  WD-40 \\
-  Sidol \\
-  Alcol \\
-  Aceto di Alcol \\
-  %Bulloni 4,5mm x 40 testa esagonale 8 \\
+  Legno compensato\\
+  Colla vinilica \\
+  Viti a croce \\
 \end{tabularx}
 
 % Sezione 4: Interventi eseguiti
 \subsection*{DURATA}
 
-2 ore
+10 ore
 
 \vfill\null
 
@@ -122,5 +129,6 @@ Valore Stimato & € 2000 (in stato dormiente) \\
   \href{https://github.com/L-E-A-P/bottega/}{
     \qrcode[height=7cm]{https://github.com/L-E-A-P/bottega/}}
 \end{flushright}
+
 
 \end{document}
