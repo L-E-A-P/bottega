@@ -1,0 +1,145 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[italian, provide=*]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{AlegreyaSans}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{longtable}
+\usepackage{pdflscape}
+
+\geometry{margin=2.5cm}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+% Colori — da intervento.sty / note.sty
+\definecolor{headcolor}{RGB}{40,40,40}
+\definecolor{fieldcolor}{RGB}{245,245,245}
+\definecolor{lightgray}{RGB}{220,220,220}
+
+\usepackage{ocr}
+\renewcommand{\ocr}[1]{{\ocrfamily #1}}
+
+\title{\textsc{BOTTEGA RADICALE} \\[0.5em]
+  {\huge \textbf{Registro degli interventi}} \\[0.3em]
+  {\large \textsc{leap} --- Laboratorio ElettroAcustico Permanente}}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{landscape}
+
+\vspace{1cm}
+
+\begin{center}
+\begin{longtable}{
+  >{\centering\arraybackslash}p{0.6cm}
+  >{\centering\arraybackslash}p{4.5cm}
+  >{\centering\arraybackslash}p{3.2cm}
+  >{\raggedright\arraybackslash}p{4.5cm}
+  >{\raggedright\arraybackslash}p{5.8cm}
+}
+
+\toprule[0.8pt]
+  \rowcolor{fieldcolor}
+  \textbf{N.} &
+  \textbf{Codice} &
+  \textbf{Data} &
+  \textbf{Strumento} &
+  \textbf{Folder} \\
+\midrule[0.4pt]
+\endfirsthead
+
+\toprule[0.8pt]
+  \rowcolor{fieldcolor}
+  \textbf{N.} &
+  \textbf{Codice} &
+  \textbf{Data} &
+  \textbf{Strumento} &
+  \textbf{Folder} \\
+\midrule[0.4pt]
+\endhead
+
+\bottomrule[0.8pt]
+\endfoot
+
+\bottomrule[0.8pt]
+\endlastfoot
+
+  1 &
+  \ocr{LEAP170725BR0001} &
+  17 luglio 2025 &
+  grande spirale &
+  \texttt{mb-1980-01-grande-spirale} \\[4pt]
+
+  2 &
+  \ocr{LEAP190725BR0002} &
+  19 luglio 2025 &
+  violino I &
+  \texttt{mb-1990-01-violino-I} \\[4pt]
+
+  3 &
+  \ocr{LEAP190725BR0003} &
+  19 luglio 2025 &
+  violino II &
+  \texttt{mb-1990-02-violino-II} \\[4pt]
+
+  4 &
+  \ocr{LEAP210725BR0004} &
+  21 luglio 2025 &
+  viola &
+  \texttt{mb-1990-03-viola} \\[4pt]
+
+  5 &
+  \ocr{LEAP210725BR0005} &
+  21 luglio 2025 &
+  violoncello &
+  \texttt{mb-1990-04-violoncello} \\[4pt]
+
+  6 &
+  \ocr{LEAP250725BR0006} &
+  25 luglio 2025 &
+  barre ricambio &
+  \texttt{mb-1980-04-barre-ricambio} \\[4pt]
+
+\midrule[0.2pt]
+
+  7 &
+  &
+  &
+  &
+  \\[4pt]
+
+  8 &
+  \ocr{LEAP260725BR0008} &
+  26 Luglio 2025 &
+  arpa circolare&
+  \texttt{mb-1980-03-arpa-circolare} \\[4pt]
+
+\midrule[0.2pt]
+
+  9 &
+  \ocr{LEAP080925BR0009} &
+  8 settembre 2025 &
+  kathedrale &
+  \texttt{mb-1980-02-kathedrale} \\[4pt]
+
+  10 &
+  \ocr{LEAP281025BR0010} &
+  28 ottobre 2025 &
+  kathedrale &
+  \texttt{mb-1980-02-kathedrale} \\[4pt]
+
+\end{longtable}
+\end{center}
+
+\end{landscape}
+
+\end{document}
